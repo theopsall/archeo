@@ -159,7 +159,6 @@ if __name__ == '__main__':
     print(train_yhat[0])
     print("Training SVM Score {0} %".format(accuracy_score(y_train, train_yhat)))
     print("Testing SVM Score {0} %".format(accuracy_score(y_test, test_yhat)))
-    print("Training SVM Classification Report {0} %".format(classification_report(y_train, train_yhat, labels=class_names)))
-    print("Testing SVM Classification Report {0} %".format(classification_report(y_test, test_yhat, labels=class_names)))
-        
-   
+    print("Training SVM Classification Report {0} %".format(classification_report(y_train, train_yhat, target_names=class_names)))
+    print("Testing SVM Classification Report {0} %".format(classification_report(y_test, test_yhat, target_names=class_names)))
+    
