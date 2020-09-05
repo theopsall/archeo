@@ -115,7 +115,7 @@ def split_data(features, labels, filenames):
     COUNTER = 0
     for name  in Counter(TRACKS).items():
 
-        if COUNTER => FOR_TRAIN :
+        if COUNTER >= FOR_TRAIN :
             print("COUNTER", COUNTER)
             idx = COUNTER
         else :
