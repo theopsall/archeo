@@ -114,11 +114,12 @@ def split_data(features, labels, filenames):
     FOR_TRAIN = int(TOTAL_FILES * 0.8)
     COUNTER = 0
     for name  in Counter(TRACKS).items():
-        COUNTER += name[1]
 
-        if COUNTER > FOR_TRAIN :
+        if COUNTER => FOR_TRAIN :
             print("COUNTER", COUNTER)
             idx = COUNTER
+        else :
+            COUNTER += name[1]
 
 
     return features[:idx], labels[:idx], features[idx:], labels[idx:]
