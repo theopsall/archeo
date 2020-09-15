@@ -93,18 +93,15 @@ def build_model(input_size, no_classes):
                          input_shape=input_size))
     cnn_model.add(BatchNormalization())
     cnn_model.add(MaxPooling2D((3, 2)))
-    cnn_model.add(Dropout(0.1))
     # 1st Hidden Layer
 
-    cnn_model.add(Conv2D(128, (3, 3), activation='relu'))
+    cnn_model.add(Conv2D(64, (3, 3), activation='relu'))
     cnn_model.add(BatchNormalization())
     cnn_model.add(MaxPooling2D((3, 2)))
-    cnn_model.add(Dropout(0.2))
 
     # 2nd Hidden Layer
-    cnn_model.add(Conv2D(256, (3, 3), activation='relu'))
+    cnn_model.add(Conv2D(128, (3, 3), activation='relu'))
     cnn_model.add(MaxPooling2D((3, 2)))
-    #model.add(Dropout(0.4))
 
     # Flatten the model
     cnn_model.add(Flatten())
