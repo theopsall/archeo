@@ -22,9 +22,3 @@ Experiments can be found at experiment directory, as described in the paper.
     python3 cnn.py -i /home/SPECT/
 ```
 
-## DISCLAIMER
-In order to run the experiments 3 and 4 you first have to extract the spectograms from the av files.
-You can achieve this transformation by running make_dirs.py
-```bash
-    python3 source/make_dirs.py -a /home/SOURCE_DATA/ -g /home/SOURCE_LABELS/ -o /home/SPECT/
-```
