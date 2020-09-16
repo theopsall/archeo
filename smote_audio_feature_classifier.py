@@ -62,14 +62,14 @@ if __name__ == "__main__":
 
     x_train, y_train, x_test, y_test = split_data(f, labels, fn)
     x_sub, y_sub = get_minority_instace(pd.DataFrame(x_train), pd.DataFrame(y_train))
-    x_res, y_res = MLSMOTE(x_sub, y_sub, parse.res)
-
+    x_res, y_res = MLSMOTE(x_sub, y_sub, parse.resampled)
+    print("Resampled")
     x = pd.concat([pd.DataFrame(x_train), x_res], ignore_index=True)
     y = pd.concat([pd.DataFrame(y_train), y_res], ignore_index=True)
-
+    print('Synthetic data have been added to the train set')
     class_names = [str(c) for c in y.columns]
-
-    classifier = OneVsRestClassifier(LinearSVC(max_iter=500000, class_weight='balanced'), n_jobs=-1)
+    print("LinearSVc Classifier")
+    classifier = OneVsRestClassifier(LinearSVC(max_iter=50000, class_weight='balanced'), n_jobs=-1)
     classifier.fit(x, y)
     pickle.dump(classifier, open(parse.output + ".sav", 'wb'))
 
