@@ -28,7 +28,7 @@ Experiments can be found at experiment directory, as described in the paper.
     python3 cnn.py -i /home/SPECT/
 ```
 - - -
-In order to run the last two experiments, you first have to seperate the wavs files into subdirectories and then create the spectorgrams.
+In order to run the last two experiments, you first have to seperate the wavs files into subdirectories and then create the spectrograms.
 
 Seperate wavs to subdirectoies base on the label
 ```bash
