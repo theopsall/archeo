@@ -156,7 +156,7 @@ if __name__ == "__main__":
 
     X_train = X_train.reshape((X_train.shape[0], 240, 320, 1))
     X_val = X_val.reshape((X_val.shape[0], 240, 320, 1))
-    X_test = X_test.reshape((X_val.shape[0], 240, 320, 1))
+    X_test = X_test.reshape((X_test.shape[0], 240, 320, 1))
 
     opt = Adam(learning_rate=0.003)
     cb = EarlyStopping(patience=2, verbose=2, restore_best_weights=True)
