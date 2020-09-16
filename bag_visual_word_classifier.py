@@ -24,7 +24,7 @@ def parse_arguments():
     record_analyze = argparse.ArgumentParser(description="Archeo Baseline")
 
     record_analyze.add_argument("-i", "--input", help="Input directory with spectograms")
-    record_analyze.add_argument("-o", "--output", help="Output filename for classifier")
+    record_analyze.add_argument("-o", "--output", default='bovw', help="Output filename for classifier")
 
     return record_analyze.parse_args()
 
@@ -97,7 +97,7 @@ if __name__ == '__main__':
         print("SVM Classifier for kmeans with {0} number of clusters.".format(num_cluster))
         classifier = OneVsRestClassifier(LinearSVC(max_iter=10000*(i+1)), n_jobs=-1)
         classifier.fit(train_X, y_train)
-        pickle.dump(classifier, open(parse.output + "_{}.sav".format(num_cluster), 'wb'))
+        pickle.dump(classifier, open(parse.output + "_{}_clusters.sav".format(num_cluster), 'wb'))
 
         test_yhat = classifier.predict(test_X)
         print("Testing SVM Classification Report {0} %"
