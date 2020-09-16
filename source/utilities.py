@@ -1,6 +1,7 @@
 """ Utility file, containg usefull functions """
 import os
 import cv2
+from collections import Counter
 import numpy as np
 
 def crawl_directory(directory):
