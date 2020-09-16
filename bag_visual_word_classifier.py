@@ -101,5 +101,5 @@ if __name__ == '__main__':
 
         test_yhat = classifier.predict(test_X)
         print("Testing SVM Classification Report {0} %"
-              .format(classification_report(y_test, test_yhat, labels=classes)))
+              .format(classification_report(y_test, test_yhat, target_names=classes)))
         gc.collect() # Free memory to prevent killing service
