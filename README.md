@@ -8,7 +8,7 @@ Archeo dataset contains small audio files from 2 main data sources. The first so
 
 - - -
 # Experiments
-Experiments can be found at experiment directory, as described in the paper.
+Experiments, as described in the paper.
 
 1 Train Multi Label SVC Classifier based on audio features
 ```bash
