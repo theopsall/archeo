@@ -2,10 +2,9 @@
  ARCHEO: a python lib for sound event detection in areas of touristic Interest.
 
 Archeo dataset contains small audio files from 2 main data sources. The first source comes from recordings in the urban area of Athens while the second from corresponding videos, of a walk in the urban area of Athens, from YouTube. The data set consists of 13 classes in total as described in the publication.
- |
 
-**Link**: https://drive.google.com/file/d/1a4AmrX926fv84jeV8iYdFf-RULkCCvpU/view
 
+**Link**: https://drive.google.com/file/d/1rxLlUlqj72oU2Uz9VWQREcBB3Am6YBHr/view?usp=sharing
 - - -
 # Experiments
 Experiments, as described in the paper.
