@@ -89,7 +89,6 @@ if __name__ == '__main__':
         train_X = scale.transform(train_X)
         print("Train images normalized.")
         # Scaling Test  Data
-        scale = StandardScaler().fit(test_X)
         test_X = scale.transform(test_X)
         print("Test images normalized.")
         gc.collect() # Free memory to prevent killing service
