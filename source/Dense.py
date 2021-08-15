@@ -12,10 +12,9 @@ class DenseDetector():
 
     def __init__(self, step_size=20, feature_scale=20, img_bound=20) :
 
-
         self.initXyStep = step_size # size of the circle
         self.initFeatureScale = feature_scale # distance between the circles
-        self.initImgBound = img_bound # Starting point from top left image corner
+        self.initImgBound = img_bound # Starting point from top left corner
 
 
     def detect(self, img) :
@@ -48,14 +47,13 @@ class BoVW(object):
         self.extractor = Extractor('sift')
         self.num_clusters = num_clusters
         self.num_retries = 10
+
     def cluster(self, datapoints):
 
-        # mallon prepei na allaksw ta datapoints gia na ta dwsw ston kmeans !
         kmeans = MiniBatchKMeans(self.num_clusters, init_size= 3*self.num_clusters+100)
-
         res = kmeans.fit(datapoints)
-
         centroids = res.cluster_centers_
+
         return kmeans, centroids
 
     def normalize(self, input_data):
@@ -67,6 +65,7 @@ class BoVW(object):
             return input_data
 
     def get_feature_vector(self, kmeans, descriptors):
+
         im_features = np.array([np.zeros(self.num_clusters) 
                                 for i in range(len(descriptors))])
 
@@ -74,11 +73,8 @@ class BoVW(object):
 
             for j in range(len(descriptors[i])):
                 feature = descriptors[i][j]
-
                 feature = feature.reshape(1,128)
-
                 idx = kmeans.predict(feature)
-
                 im_features[i][idx] += 1
 
         return im_features
